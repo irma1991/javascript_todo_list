@@ -1,56 +1,26 @@
-//duomenu ivedimo formos iskvietimas mygtuku prideti
-function display() {
-    let x = document.getElementById("dataform");
-    x.style.display = "block"
-}
+function addTask() {
 
-//duomenu radimas, nuskaitymas, issisaugojimas
-const container = document.getElementById("TasksList");
-const icon = "<i class=\"fa fa-bar-chart\"></i>";
-const checkBox = "<input type=\"checkbox\" name=\"vehicle1\" >";
-const subject = document.getElementById("taskInput");
-const priority = document.getElementById("inputPriority");
-const dueDate = document.getElementById(id = "dueDate");
-const status = "<p>In progress</p>";
-const percent = document.getElementById("inputProgres");
-const delBtn = "<button type=\"button\" class=\"btn btn-danger\">Delete</button>"
+    var table = document.getElementById("table");
 
+    var row = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+    var td5 = document.createElement("td");
 
-const button = document.getElementById("confirm");
-button.addEventListener('click', readForm);
+    td1.innerHTML = document.getElementById("formSubjectInput").value;
+    td2.innerHTML  = document.getElementById("inputPriority").value;
+    td3.innerHTML  = document.getElementById("formDueDateInput").value;
+    td4.innerHTML  = document.getElementById("inputStatus").value;
+    td5.innerHTML  = document.getElementById("inputPercentCompleted").value;
 
-function readForm() {
-    let newRow = document.createElement("div");
-    container.appendChild(newRow);
-    newRow.className = "row align-items-center";
-    let newCol0 = document.createElement("div");
-    newRow.appendChild(newCol0);
-    newCol0.className = "col-1";
-    newCol0.innerHTML = icon;
-    let newCol1 = document.createElement("div");
-    newRow.appendChild(newCol1);
-    newCol1.className = "col-2";
-    newCol1.innerHTML = checkBox;
-    let newCol2 = document.createElement("div");
-    newRow.appendChild(newCol2);
-    newCol2.className = "col-3";
-    newCol2.innerHTML = subject.value;
-    let newCol3 = document.createElement("div");
-    newRow.appendChild(newCol3);
-    newCol3.className = "col-2"
-    newCol3.innerHTML = dueDate.value;
-    let newCol4 = document.createElement("div");
-    newRow.appendChild(newCol4);
-    newCol4.className = "col-1";
-    newCol4.innerHTML = status;
-    let newCol5 = document.createElement("div");
-    newRow.appendChild(newCol5);
-    newCol5.className = "col-2 divProgress";
-    newCol5.innerHTML = "<div class=\"progress\">\n" +
-        "  <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " +percent.value+" \" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n" +
-        "</div>";
-    let newCol6 = document.createElement("div");
-    newRow.appendChild(newCol6);
-    newCol6.className = "col-2";
-    newCol6.innerHTML = delBtn;
-}
+    row.appendChild(td1);
+    row.appendChild(td2);
+    row.appendChild(td3);
+    row.appendChild(td4);
+    row.appendChild(td5);
+
+    table.children[0].appendChild(row);
+
+};
