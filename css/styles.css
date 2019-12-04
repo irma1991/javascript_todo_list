@@ -1,27 +1,21 @@
-/*.container{*/
-    /*width: 100%;*/
-    /*background-color: ivory;*/
-    /*text-align: center;*/
-    /*padding-top: 20px;*/
-/*}*/
-/*img{*/
-    /*border-radius: 5%;*/
-    /*width: 220px;*/
-    /*padding: 5px;*/
-    /*margin: 5px;*/
-    /*border: 1px dotted black;*/
+.main-container{
+    width: 40%;
+    padding-top: 20px;
+    background-color: #86cfda;
+}
 
-/*}*/
-/*ul{*/
-    /*list-style: none;*/
-/*}*/
-/*li{*/
-    /*display: inline-table;*/
-/*}*/
-/*.pakeitimui{*/
-    /*background-image: url("img/cover.png");*/
-/*}*/
+label{
+    text-transform: uppercase;
+    font-weight: bold;
+}
 
-li{
-    display: block;
+.submitt-button{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.table-container{
+    padding-top: 30px;
+    text-align: center;
 }
