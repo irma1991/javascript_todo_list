@@ -1,87 +1,56 @@
+//duomenu ivedimo formos iskvietimas mygtuku prideti
+function display() {
+    let x = document.getElementById("dataform");
+    x.style.display = "block"
+}
 
-// var manoAjax = new XMLHttpRequest(); //sukuriamas naujas objektas
-// manoAjax.onreadystatechange = function () { //callback
-//     if(manoAjax.readyState === 4){
-//         if(manoAjax.status === 200){
-//             document.querySelector('aside').innerHTML = manoAjax.responseText;
-//         } else {
-//             alert(manoAjax.statusText)
-//         }
-//     }
-// };
-//
-// manoAjax.open('GET', 'menu.html'); //uzklausa
-// document.querySelector('button.showMenu').onclick = function (){
-//     manoAjax.send(); //uzklausos paleidimas
-//     document.querySelector('button.showMenu').style.display = "none";
-// };
-
-
-// const vietos = document.querySelector('ul');
-//
-// const button1 = document.querySelector('#rodyti');
-// button1.addEventListener('click', RodykFoto)
-//
-// const button2 = document.querySelector('#maisyti');
-// button2.addEventListener('click', MaisykFoto)
-//
-// let foto = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10'];
-//
-// function RodykFoto()
-// {
-// 	for (let i = 0; i < foto.length; i++)
-// 	{
-// 		const vieta = document.createElement('li');
-//         const fotos = document.createElement("img");
-//         fotos.src='img/'+foto[i]+'.png';
-//         vietos.appendChild(vieta);
-//         vieta.appendChild(fotos);
-//     }
-// }
-//
-// function displayNone()
-// {
-//     let x = document.getElementById("rodyti");
-//     if (x.style.display === "none")
-//     {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
-//
-// function MaisykFoto()
-// {
-// 	let naujas = foto
-//     naujas.sort(function () {
-//         return 0.5 - Math.random()
-// });
-//
-// const seni = document.querySelectorAll('img');
-// 	for(let i=0; i<naujas.length; i++)
-// 	{
-// 		seni[i].src='img/'+naujas[i]+'.png'
-//     }
-//
-//     const list = document.querySelectorAll('img');
-//     for(let i=0; i < list.length; i++)
-//     {
-//     	list[i].ondblclick = function (e)
-//     	{
-//     		let target = e.target
-//             target.src = 'img/cover.png';
-//         }
-//     }
-// }
-
-// "use strict"
-//
-// let mokiniai = ['Irma', 'Ieva', 'Aiste'];
-// mokiniai = JSON.stringify(mokiniai);
-// localStorage.setItem('mokiniai', mokiniai);
-// mokiniai = localStorage.getItem('mokiniai');
-// console.log(JSON.parse(mokiniai));
+//duomenu radimas, nuskaitymas, issisaugojimas
+const container = document.getElementById("TasksList");
+const icon = "<i class=\"fa fa-bar-chart\"></i>";
+const checkBox = "<input type=\"checkbox\" name=\"vehicle1\" >";
+const subject = document.getElementById("taskInput");
+const priority = document.getElementById("inputPriority");
+const dueDate = document.getElementById(id = "dueDate");
+const status = "<p>In progress</p>";
+const percent = document.getElementById("inputProgres");
+const delBtn = "<button type=\"button\" class=\"btn btn-danger\">Delete</button>"
 
 
+const button = document.getElementById("confirm");
+button.addEventListener('click', readForm);
 
-
+function readForm() {
+    let newRow = document.createElement("div");
+    container.appendChild(newRow);
+    newRow.className = "row align-items-center";
+    let newCol0 = document.createElement("div");
+    newRow.appendChild(newCol0);
+    newCol0.className = "col-1";
+    newCol0.innerHTML = icon;
+    let newCol1 = document.createElement("div");
+    newRow.appendChild(newCol1);
+    newCol1.className = "col-2";
+    newCol1.innerHTML = checkBox;
+    let newCol2 = document.createElement("div");
+    newRow.appendChild(newCol2);
+    newCol2.className = "col-3";
+    newCol2.innerHTML = subject.value;
+    let newCol3 = document.createElement("div");
+    newRow.appendChild(newCol3);
+    newCol3.className = "col-2"
+    newCol3.innerHTML = dueDate.value;
+    let newCol4 = document.createElement("div");
+    newRow.appendChild(newCol4);
+    newCol4.className = "col-1";
+    newCol4.innerHTML = status;
+    let newCol5 = document.createElement("div");
+    newRow.appendChild(newCol5);
+    newCol5.className = "col-2 divProgress";
+    newCol5.innerHTML = "<div class=\"progress\">\n" +
+        "  <div class=\"progress-bar\" role=\"progressbar\" style=\"width: " +percent.value+" \" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n" +
+        "</div>";
+    let newCol6 = document.createElement("div");
+    newRow.appendChild(newCol6);
+    newCol6.className = "col-2";
+    newCol6.innerHTML = delBtn;
+}
