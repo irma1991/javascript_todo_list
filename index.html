@@ -7,82 +7,69 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>JS</title>
 </head>
 <body>
 
-<!-- mygtukas pirminiam lange, duomenu ivedimo formai iskviesti ---->
-<div class="row m-3">
-    <div class="col">
-        <button onclick="display()" class="btn btn-info">Prideti</button>
+<div class = "container main-container">
+    <form id = "mainForm">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Task Subject</label>
+            <input type="text" class="form-control" id="formSubjectInput" placeholder="Insert your task subject">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Task Priority</label>
+            <select id="inputPriority" class="form-control">
+                <option selected>Choose your task priority</option>
+                <option>Low</option>
+                <option>Normal</option>
+                <option>High</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Task Due Date</label>
+            <input type="date" class="form-control" id="formDueDateInput" placeholder="Choose your task due date">
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Task Status</label>
+            <select id="inputStatus" class="form-control">
+                <option selected>Choose your task status</option>
+                <option>New</option>
+                <option>In Progress</option>
+                <option>Complete</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Percent Completed</label>
+            <select id="inputPercentCompleted" class="form-control">
+                <option selected>Your task completion in percentage</option>
+                <option>0%</option>
+                <option>25%</option>
+                <option>75%</option>
+                <option>100%</option>
+            </select>
+        </div>
+    </form>
+    <div class = "submitt-button">
+            <button onClick="addTask()" type="button" id = "addButton" class="btn btn-primary btn-lg">Add your task</button>
     </div>
 </div>
-<!-- duomenu ivedimo forma----->
-<div class="row">
-    <div class="col">
-        <form class=" p-5" id="dataform">
-            <div class="form-group">
-                <label for="taskInput">Task</label>
-                <input type="text" class="form-control" id="taskInput" placeholder="Task input">
-            </div>
-            <div class="form-group row">
-                <label for="dueDate" class="col-sm-3 col-form-label">Due Date</label>
-                <div class="col-sm-9">
-                    <input type="datetime-local" class="form-control" id="dueDate">
-                </div>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputPriority">Priority</label>
-                <select id="inputPriority" class="form-control">
-                    <option selected>high</option>
-                    <option>normal</option>
-                    <option>low</option>
-                </select>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputProgres">Progres</label>
-                <select id="inputProgres" class="form-control">
-                    <option selected>25%</option>
-                    <option>50%</option>
-                    <option>100%</option>
-                </select>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-10">
-                    <button  id="confirm" class="btn btn-primary">Confirm</button>
-                </div>
-            </div>
-        </form>
-    </div>
+
+<div class = "container table-container">
+
+    <table class="table" id = "table">
+        <thead class="thead-light">
+        <tr>
+            <th>Subject</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Percent Completed</th>
+        </tr>
+        </thead>
+    </table>
 </div>
-<!-----duomenu ivedimo formos pabaiga----->
-
-<!-----kuriama lentele------>
-<table class="table" >
-    <thead class="thead-light" >
-    <tr>
-        <th >#</th>
-        <th >Done</th>
-        <th >Subject</th>
-        <th >Priority</th>
-        <th >Due Date</th>
-        <th >Status</th>
-        <th >Percent completed</th>
-        <th >Delete</th>
-    </tr>
-    </thead>
-    <div class="container" id="TasksList" >
-
-
-
-        <!----cia JS surasys duomenis is lenteles---->
-
-
-    </div>
-</table>
-
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
